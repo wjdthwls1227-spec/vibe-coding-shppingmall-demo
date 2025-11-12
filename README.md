@@ -74,7 +74,6 @@ npm install
 ```
 
 환경 변수 설정 (`client/.env` 파일 생성):
-- `client/env.example` 파일을 참고하여 `client/.env` 파일을 생성하세요.
 - **중요**: Vite 환경 변수는 반드시 `VITE_` 접두사가 필요합니다.
 
 ```env
@@ -117,7 +116,7 @@ npm run dev
    - `VITE_API_URL`: Render 서버 URL (예: `https://your-service.onrender.com/api`)
    - `VITE_CLOUDINARY_CLOUD_NAME`: Cloudinary 클라우드 이름
    - `VITE_CLOUDINARY_UPLOAD_PRESET`: Cloudinary 업로드 프리셋
-6. `client/env.example` 파일 참고
+6. 환경 변수는 Vercel 대시보드에서 직접 설정
 
 ## 주요 기능
 
