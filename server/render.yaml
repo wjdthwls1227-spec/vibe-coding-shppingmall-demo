@@ -2,6 +2,7 @@ services:
   - type: web
     name: shoping-mall-server
     env: node
+    rootDir: server
     buildCommand: npm install
     startCommand: npm start
     envVars:
