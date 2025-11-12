@@ -5,6 +5,11 @@ import axios from 'axios';
 const baseURL = import.meta.env.VITE_API_URL || 
   (import.meta.env.DEV ? 'http://localhost:5002/api' : '/api');
 
+// 디버깅: API URL 확인 (프로덕션에서도 확인 가능)
+console.log('🔍 API Base URL:', baseURL);
+console.log('🔍 VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('🔍 NODE_ENV:', import.meta.env.MODE);
+
 const api = axios.create({
   baseURL: baseURL,
   headers: {
@@ -31,6 +36,17 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // 디버깅: 에러 상세 정보 출력
+    console.error('❌ API 요청 실패:', {
+      url: error.config?.url,
+      method: error.config?.method,
+      baseURL: error.config?.baseURL,
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      message: error.message,
+      data: error.response?.data,
+    });
+
     // 에러 처리
     if (error.response?.status === 401) {
       // 인증 오류 처리
