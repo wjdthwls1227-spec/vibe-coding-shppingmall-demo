@@ -25,7 +25,6 @@ build
 .env.production
 .env.development
 # 예시 파일은 Git에 포함
-!.env.example
 !env.example
 
 # Editor directories and files
