@@ -128,6 +128,8 @@ function Login() {
         });
       }
     } catch (error) {
+      console.error('❌ 로그인 오류 상세:', error);
+      
       if (error.response?.status === 401) {
         setFeedback({
           type: 'error',
@@ -139,14 +141,20 @@ function Login() {
           message: error.response.data?.message || '입력 값을 다시 확인해주세요.',
         });
       } else if (error.request) {
+        // 요청은 보냈지만 응답을 받지 못함 (네트워크 오류, CORS, 서버 다운 등)
+        console.error('❌ 서버 응답 없음:', {
+          url: error.config?.url,
+          baseURL: error.config?.baseURL,
+          fullURL: error.config?.baseURL + error.config?.url,
+        });
         setFeedback({
           type: 'error',
-          message: '서버에 연결할 수 없습니다. 서버가 실행 중인지 확인해주세요.',
+          message: `서버에 연결할 수 없습니다. (${error.config?.baseURL || 'URL 확인 불가'}) 서버가 실행 중인지 확인해주세요.`,
         });
       } else {
         setFeedback({
           type: 'error',
-          message: '로그인 처리 중 알 수 없는 오류가 발생했습니다.',
+          message: `로그인 처리 중 오류가 발생했습니다: ${error.message}`,
         });
       }
     } finally {

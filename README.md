@@ -49,7 +49,6 @@ npm install
 ```
 
 환경 변수 설정 (`server/.env` 파일 생성):
-- `server/env.example` 파일을 참고하여 `server/.env` 파일을 생성하세요.
 
 ```env
 # Server Environment Variables
@@ -61,6 +60,8 @@ PORTONE_REST_API_KEY=your_portone_api_key
 PORTONE_REST_API_SECRET=your_portone_api_secret
 CLIENT_URL=http://localhost:5173
 ```
+
+**주의**: 실제 값으로 변경하세요. `.env` 파일은 Git에 커밋하지 마세요.
 
 서버 실행:
 ```bash
