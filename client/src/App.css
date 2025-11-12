@@ -46,6 +46,7 @@ a {
   font-size: 1.75rem;
   letter-spacing: 0.6rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .nav-menu {
@@ -302,8 +303,8 @@ a {
 .hero-image {
   min-height: 420px;
   border-radius: 18px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(90, 90, 90, 0.25)),
-    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80')
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.3)),
+    url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80')
       center/cover no-repeat;
 }
 
@@ -351,7 +352,7 @@ a {
 }
 
 .arrivals-grid {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
 .category-card {

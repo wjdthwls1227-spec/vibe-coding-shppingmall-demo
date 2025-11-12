@@ -18,6 +18,7 @@ const CartPage = lazy(() => import('./pages/CartPage'));
 const CheckoutPage = lazy(() => import('./pages/CheckoutPage'));
 const OrderSuccess = lazy(() => import('./pages/OrderSuccess'));
 const OrderList = lazy(() => import('./pages/OrderList'));
+const ProductList = lazy(() => import('./pages/ProductList'));
 
 function App({ user }) {
   return (
@@ -32,6 +33,7 @@ function App({ user }) {
           <Route path="/admin/products/new" element={<AdminProductCreate />} />
           <Route path="/admin/products" element={<AdminProductList />} />
           <Route path="/admin/products/:id/edit" element={<AdminProductEdit />} />
+          <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />

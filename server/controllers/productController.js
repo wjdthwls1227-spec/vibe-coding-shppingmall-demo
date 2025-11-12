@@ -57,12 +57,16 @@ exports.getProducts = async (req, res) => {
   try {
     const page = Number(req.query.page) > 0 ? Number(req.query.page) : 1;
     const limit = Number(req.query.limit) > 0 ? Number(req.query.limit) : 2;
+    const category = req.query.category;
 
     const skip = (page - 1) * limit;
 
+    // 카테고리 필터링
+    const query = category ? { category } : {};
+
     const [products, total] = await Promise.all([
-      Product.find().sort({ createdAt: -1 }).skip(skip).limit(limit),
-      Product.countDocuments(),
+      Product.find(query).sort({ createdAt: -1 }).skip(skip).limit(limit),
+      Product.countDocuments(query),
     ]);
 
     const totalPages = Math.ceil(total / limit);

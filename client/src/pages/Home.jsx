@@ -134,22 +134,23 @@ function Home({ user }) {
 export default Home;
 
 const HeroSection = memo(function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section className="hero-section">
       <div className="hero-content">
         <div className="hero-text">
-          <p className="hero-subtitle">Spring Collection 2025</p>
-          <h1>Discover timeless elegance with our new seasonal pieces.</h1>
+          <p className="hero-subtitle">2025 SS Collection</p>
+          <h1>당신만의 스타일을 발견하세요</h1>
           <p className="hero-description">
-            Experience curated looks crafted with refined silhouettes, luxurious textures, and
-            effortless sophistication for every occasion.
+            일상 속 특별함을 더하는 컬렉션. 트렌디하면서도 실용적인 디자인으로
+            매일을 더욱 스타일리시하게 만들어드립니다.
           </p>
           <div className="hero-actions">
-            <button type="button" className="hero-cta">
-              Shop Now
+            <button type="button" className="hero-cta" onClick={() => navigate('/products')}>
+              쇼핑하기
             </button>
-            <button type="button" className="hero-secondary">
-              View Lookbook
+            <button type="button" className="hero-secondary" onClick={() => navigate('/')}>
+              신상품 보기
             </button>
           </div>
         </div>

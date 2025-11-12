@@ -37,19 +37,19 @@ const HomeNavbar = memo(function HomeNavbar({ user, onLogout, onAdmin }) {
       <Link to="/" className="nav-brand nav-brand--link">ATELIER</Link>
       <ul className="nav-menu">
         <li>
-          <button type="button">Women</button>
+          <button type="button" onClick={() => navigate('/products?category=상의')}>Women</button>
         </li>
         <li>
-          <button type="button">Men</button>
+          <button type="button" onClick={() => navigate('/products?category=하의')}>Men</button>
         </li>
         <li>
-          <button type="button">Kids</button>
+          <button type="button" onClick={() => navigate('/products?category=악세사리')}>Accessories</button>
         </li>
         <li>
-          <button type="button">New Arrivals</button>
+          <button type="button" onClick={() => navigate('/')}>New Arrivals</button>
         </li>
         <li>
-          <button type="button">Sale</button>
+          <button type="button" onClick={() => navigate('/products')}>All Products</button>
         </li>
       </ul>
       <div className="nav-actions">
